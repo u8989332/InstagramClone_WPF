@@ -5,7 +5,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Path Data="{StaticResource InstagramHome}" Fill="Black"/>
+                    <Path Data="{StaticResource InstagramHome}" Fill="Black" Stretch="Fill"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -14,7 +14,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Path Data="{StaticResource InstagramMessage}" Fill="Black"/>
+                    <Path Data="{StaticResource InstagramMessage}" Fill="Black" Stretch="Fill"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -23,7 +23,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Path Data="{StaticResource InstagramExplore}" Fill="Black"/>
+                    <Path Data="{StaticResource InstagramExplore}" Fill="Black" Stretch="Fill"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -32,7 +32,16 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Path Data="{StaticResource InstagramActivity}" Fill="Black"/>
+                    <Path Data="{StaticResource InstagramActivity}" Fill="Black" Stretch="Fill"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="InstagramOptionButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Path Data="{StaticResource InstagramOption}" Fill="Black" Stretch="Fill"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

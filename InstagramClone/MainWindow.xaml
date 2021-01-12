@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstagramClone"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
@@ -16,16 +17,106 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid x:Name="GridTop" Grid.ColumnSpan="2" Background="White" MouseDown="Top_MouseDown">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
-                <Button Style="{StaticResource InstagramHomeButton}" Width="50" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" HorizontalAlignment="Left" Source="/Images/Instagram_logo.png" VerticalAlignment="Center"  Margin="20,10"/>
+            <StackPanel
+                Grid.Column="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                materialDesign:RippleAssist.IsCentered="True">
+                <materialDesign:ColorZone
+                    Mode="Standard"
+                    Padding="8 4 8 4"
+                    CornerRadius="2"
+                    Panel.ZIndex="1"
+                    Margin="0 0 0 0"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+              Width="*" />
+                            <ColumnDefinition
+              Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox
+                    Grid.Column="0"
+                    Margin="0 0 0 0"
+                    materialDesign:HintAssist.Hint="Search"
+                    materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                    Width="200"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center"
+                    Background="Transparent"/>
+                        <Button
+                        Grid.Column="1"
+                        Style="{DynamicResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon
+                                Kind="Magnify"
+                                Opacity=".56" />
+                        </Button>
+                    </Grid>
+                </materialDesign:ColorZone>
+            </StackPanel>
+            <StackPanel  Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                <Button Style="{StaticResource InstagramHomeButton}" Margin="10,0,10,0" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                 </Button>
-                <Button Style="{StaticResource InstagramMessageButton}" Width="50" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                <Button Style="{StaticResource InstagramMessageButton}" Margin="10,0,10,0" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                 </Button>
-                <Button Style="{StaticResource InstagramExploreButton}" Width="50" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                <Button Style="{StaticResource InstagramExploreButton}" Margin="10,0,10,0" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                 </Button>
-                <Button Style="{StaticResource InstagramActivityButton}" Width="50" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                <Button Style="{StaticResource InstagramActivityButton}" Margin="10,0,10,0" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                 </Button>
+                <Ellipse Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15 10" Stroke="White">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Images/male.jpg" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
             </StackPanel>
         </Grid>
+        <materialDesign:ColorZone
+                    Mode="Standard"
+                    CornerRadius="2"
+                    Panel.ZIndex="1"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Ellipse Height="150" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="Images/male.jpg" Stretch="UniformToFill"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Grid.Row="0" Text="Programmer" VerticalAlignment="Center" Margin="5,0,10,0"/>
+                            <Button Background="Transparent" Foreground="Black" Width="120" Height="25">Edit Profile</Button>
+                            <Button Style="{StaticResource InstagramOptionButton}" Margin="10,0,10,0" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Grid.Row="1" Text="20 posts  14 followers  104 following" VerticalAlignment="Center" />
+                        <TextBlock Grid.Row="2" Text="I am a programmer" VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            
+        </materialDesign:ColorZone>
     </Grid>
 </Window>
