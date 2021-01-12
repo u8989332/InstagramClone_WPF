@@ -14,9 +14,10 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid x:Name="GridTop" Grid.ColumnSpan="2" Background="White" MouseDown="Top_MouseDown">
+        <Grid x:Name="GridTop" Grid.Row="0" Grid.ColumnSpan="2" Background="White" MouseDown="Top_MouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
@@ -82,12 +83,11 @@
                     CornerRadius="2"
                     Panel.ZIndex="1"
                     materialDesign:ShadowAssist.ShadowDepth="Depth1"
-                    Grid.Row="2"
+                    Grid.Row="1"
                     Grid.ColumnSpan="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
-                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -105,7 +105,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" Grid.Row="0">
                             <TextBlock Grid.Row="0" Text="Programmer" VerticalAlignment="Center" Margin="5,0,10,0"/>
                             <Button Background="Transparent" Foreground="Black" Width="120" Height="25">Edit Profile</Button>
                             <Button Style="{StaticResource InstagramOptionButton}" Margin="10,0,10,0" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
@@ -116,7 +116,28 @@
                     </Grid>
                 </Grid>
             </Grid>
-            
+        </materialDesign:ColorZone>
+        <materialDesign:ColorZone
+                    Mode="Standard"
+                    CornerRadius="2"
+                    Panel.ZIndex="1"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2">
+            <ListView x:Name="TvBox">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="3" HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="{Binding ImageData}" HorizontalAlignment="Center" Stretch="UniformToFill" Width="250" Height="250" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </materialDesign:ColorZone>
     </Grid>
 </Window>

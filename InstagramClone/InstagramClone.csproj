@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\beach-2089936_1920.jpg" />
+    <None Remove="Images\gallery-3114279_1920.jpg" />
+    <None Remove="Images\horses-1149974_1280.jpg" />
     <None Remove="Images\Instagram_logo.png" />
+    <None Remove="Images\landscape-1802337_1920.jpg" />
     <None Remove="Images\male.jpg" />
+    <None Remove="Images\parent-863085_1920.jpg" />
+    <None Remove="Images\pedestrians-1209316_1920.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,8 +22,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\beach-2089936_1920.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\gallery-3114279_1920.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\horses-1149974_1280.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Instagram_logo.png" />
+    <Resource Include="Images\landscape-1802337_1920.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\male.jpg" />
+    <Resource Include="Images\parent-863085_1920.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\pedestrians-1209316_1920.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
